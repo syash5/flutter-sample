@@ -1,0 +1,8 @@
+1. refactor the whole classes and create profile page as well.
+2. use lints for giving errors and warnings.
+3. use the lifecycle methods properly and give the proper print statements for them.
+4. profile page creation
+5. use image from asset folder.
+bonus:-
+1. implement the cached_network_image package
+2. add any sample fonts by downloading it from internet. ie bold, light, medium.
