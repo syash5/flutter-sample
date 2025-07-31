@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/core/constants/color_constants.dart';
+import 'package:flutter_sample/core/common_widgets/molecules/common_app_bar_widget.dart';
 import 'package:flutter_sample/core/constants/string_constants.dart';
-import 'package:flutter_sample/feature/homepage/widgets/tile_update_widget.dart';
+import 'package:flutter_sample/feature/body_screen/body_screen.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class DefaultHomePage extends StatefulWidget {
+  const DefaultHomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<DefaultHomePage> createState() => _DefaultHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DefaultHomePageState extends State<DefaultHomePage> {
   String appName = StringConstants.appName;
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +30,13 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          appName = "changed";
+          appName = "Changed";
           print('button clicked');
           setState(() {});
         },
         child: Icon(Icons.add),
       ),
-      body: tileUpdateWidget(title: appName),
+      body: BodyScreen(navigationMenuIndex: selectedIndex),
       backgroundColor: Colors.teal[200],
       bottomNavigationBar: NavigationBar(
         destinations: [
@@ -44,25 +45,11 @@ class _HomePageState extends State<HomePage> {
         ],
         selectedIndex: 0,
         onDestinationSelected: (int value) {
+          selectedIndex = value;
+          setState(() {});  
           print(value);
         },
       ),
     );
   }
-}
-
-class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CommonAppBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: Text(StringConstants.appBarTitle),
-      backgroundColor: ColorConstants.mainColor,
-      leading: Icon(Icons.account_balance_rounded),
-    );
-  }
-
-  @override
-  Size get preferredSize => Size.fromHeight(70);
 }
