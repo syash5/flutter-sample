@@ -13,6 +13,8 @@ class tileUpdateWidget extends StatefulWidget {
 class _MyWidgetState extends State<tileUpdateWidget> {
   @override
   void initState() {
+    // TODO: foundation package has the debug mode so add the kDebugMode so that this line
+    //  doesn't get executed on the profile or release mode
     print("this is our API call");
     super.initState();
   }
@@ -44,6 +46,7 @@ class _MyWidgetState extends State<tileUpdateWidget> {
     return Container(
       child: ListTile(
         leading: const Icon(Icons.notification_add),
+        // TODO: constant values fix
         trailing: const Text('X', style: TextStyle(fontSize: 24)),
         title: Text(widget.title + counter.toString(), style: TextStyle(fontSize: 20)),
         tileColor: Colors.blue[200],

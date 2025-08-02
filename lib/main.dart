@@ -11,6 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: StringConstants.appTitle, home: const DefaultHomePage());
+    return MaterialApp(
+      title: StringConstants.appTitle,
+      home: const DefaultHomePage(),
+      themeMode: ThemeMode.system,
+      // theme: ,
+    );
   }
 }

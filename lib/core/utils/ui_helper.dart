@@ -1,6 +1,12 @@
+import 'package:flutter/material.dart';
+
 class UIHelper {
-  void snackBar() {
+  static void snackBar(BuildContext context) {
     // snackbar implementation
-    //   context, keys, timer, imports
+    //   context
   }
+
+  //   implement the dialog as well.
+
+  static Future<void> showMyDialog(BuildContext context) async {}
 }
