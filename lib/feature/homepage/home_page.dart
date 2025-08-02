@@ -11,8 +11,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Center(      
       child: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             'Home Page',

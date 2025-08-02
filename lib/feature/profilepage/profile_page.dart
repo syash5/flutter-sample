@@ -14,6 +14,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Center(
       child: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             'Profile Page',
@@ -24,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
             'Welcome to the profile page of our application!',
             style: TextStyle(fontSize: 16),
           ),
-          Image(image: AssetImage('assets/images/bg.jpg')),
+          // Image(image: AssetImage('assets/images/bg.jpg')),
         ],
       ),
     );
